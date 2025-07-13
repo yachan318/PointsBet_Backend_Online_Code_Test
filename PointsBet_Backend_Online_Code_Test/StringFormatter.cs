@@ -10,6 +10,7 @@ namespace PointsBet_Backend_Online_Code_Test
       - Removing redundancy
       - Refactoring / simplifying
       - Fixing typos
+      - Any other light-weight optimisation
     */
     public class StringFormatter
     {
