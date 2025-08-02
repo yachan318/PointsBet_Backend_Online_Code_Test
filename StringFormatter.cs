@@ -2,7 +2,6 @@
 
 namespace PointsBet_Backend_Online_Code_Test
 {
-
     /*
     Improve a block of code as you see fit in C#.
     You may make any improvements you see fit, for example:
@@ -14,21 +13,19 @@ namespace PointsBet_Backend_Online_Code_Test
     */
     public class StringFormatter
     {
-
-        //Code to improve
-        public static string ToCommaSepatatedList(string[] items, string quote)
+        public static string ToCommaSeparatedString(string[] items, string quote)
         {
-            StringBuilder qry = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
-
-            if (items.Length > 1)
+            if (items == null || items.length == 0)
             {
-                for (int i = 1; i < items.Length; i++)
-                {
-                    qry.Append(string.Format(", {0}{1}{0}", quote, items[i]));
-                }
-            }
+                return string.Empty;
 
-            return qry.ToString();
+                quote ??= string.Empty; // default to empty string if quote is null as assumed 
+                return string.join(",", items.select(items => $"{quote}{item}{quote}")); 
+
+            }
         }
     }
 }
+// correct typos ToCommaSepatatedList  to ToCommaSeparatedString
+//StringBuilder(string.Format("{0}{1}{0}", quote, items[0])); this is unnecessary 
+// Better maintainability: Clear documentation and error handling
